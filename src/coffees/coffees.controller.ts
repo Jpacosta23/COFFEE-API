@@ -12,12 +12,15 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { Protocol } from '../common/decorators/protocol.decorator';
-import { ParseIntPipe } from 'src/common/pipes/parse-int.pipe';
+import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 import { Public } from '../common/decorators/public.decorator';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
+import { ApiTags } from '@nestjs/swagger';
+
+@ApiTags('coffees')
 @UsePipes(ValidationPipe)
 @Controller('coffees')
 export class CoffeesController {

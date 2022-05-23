@@ -15,9 +15,7 @@ export class CoffeesService {
     private readonly coffeeRepository: Repository<Coffee>,
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
-    private readonly connection: Connection,
-    @Inject(coffeesConfig.KEY)
-    private readonly configConfiguration: ConfigType<typeof coffeesConfig>,
+    private readonly connection: Connection, // @Inject(coffeesConfig.KEY) // private readonly configConfiguration: ConfigType<typeof coffeesConfig>,
   ) {}
 
   async findAll(paginationQuery: PaginationQueryDto) {
